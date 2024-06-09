@@ -1,0 +1,35 @@
+{
+	"name": "client",
+	"version": "1.0.0",
+	"description": "A React Client for a Demo App",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "biome lint --error-on-warnings ./src",
+		"lint:fix": "biome lint --write ./src",
+		"check": "biome check --write ./src",
+		"format": "biome format --write ./src",
+		"report": "biome check --reporter=summary --log-level=warn ./src"
+	},
+	"author": "Andrew Ford",
+	"license": "GPL-3.0",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"react": "^18.3",
+		"react-dom": "^18.3",
+		"react-router-dom": "^6.23.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8",
+		"@tailwindcss/typography": "^0.5.13",
+		"@types/react": "^18.3",
+		"@types/react-dom": "^18.3",
+		"@vitejs/plugin-react": "^4.2.1",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"tailwindcss": "^3.4",
+		"vite": "^5"
+	}
+}
