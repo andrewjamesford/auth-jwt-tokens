@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
+	const { isAuthenticated } = useAuth0();
 	return (
 		<header className="flex flex-col items-center">
 			<Link to="/" className="block">
@@ -15,19 +19,19 @@ const Header = () => {
 				<ul className="md:flex md:space-x-4 text-center uppercase">
 					<li>
 						<NavLink to="/" className="block">
-							Puffers
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/pants" className="block ">
-							Pants
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/tshirts" className="block">
 							T-Shirts
 						</NavLink>
 					</li>
+					{/* <li>
+						<NavLink to="/login" className="block ">
+							Login
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/register" className="block">
+							Register
+						</NavLink>
+					</li> */}
 				</ul>
 			</nav>
 
@@ -58,6 +62,9 @@ const Header = () => {
 					</svg>
 				</Link>
 			</nav>
+
+			{isAuthenticated && <Logout />}
+			{!isAuthenticated && <Login />}
 		</header>
 	);
 };
